@@ -7,7 +7,11 @@
 <body>
     <h1>Rotten Potatoes</h1>
     <div id="app-container">
-        <app></app>
+    </div>
+    <div class="movies-container">
+        <div v-for="movie in movies">
+            <movie-preview :movie-data="movie"></movie-preview>
+        </div>
     </div>
     <script src="dist/build.js"></script>
 </body>
