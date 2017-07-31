@@ -21,6 +21,7 @@ let web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
 let address; let abiDefinition;
 let ReviewContract; let instance;
 
+// Get contract data and instantiate connection
 ContractModel.find().sort({"createdDate": -1}).limit(1).exec(function (err, contracts){
   address = contracts[0].address;
   abiDefinition = JSON.parse(contracts[0].abiDefinition);
