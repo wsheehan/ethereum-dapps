@@ -2,13 +2,13 @@ const Web3 = require('web3'),
       solc = require('solc'),
       fs = require('fs'),
       mongoose = require('mongoose'),
-      ContractModel = require('./models/contract.js')
+      ContractModel = require('../api/models/contract.js')
 
 // Mongoose connection
 mongoose.connect('mongodb://localhost/rotten-potatoes');
 
 web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
-let source = fs.readFileSync('Review.sol', 'utf8');
+let source = fs.readFileSync('contracts/Review.sol', 'utf8');
 
 let compiledContract = solc.compile(source, 1);
 if (compiledContract.errors) throw new Error("Compilation Error: " + compiledContract.errors[0]);
