@@ -32,7 +32,7 @@ contract Review {
    * Globals
    *****************************************/
 
-  // public array of all movies
+  // public mapping of all movies
   mapping(uint => Movie) movies;
 
   // Movie ID count
