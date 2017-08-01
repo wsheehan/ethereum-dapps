@@ -36,7 +36,7 @@ contract Review {
   mapping(uint => Movie) movies;
 
   // Movie ID count
-  uint private lastMovieID;
+  uint public lastMovieID;
 
   // Public array of reviewers
   mapping(address => User) users;
@@ -84,7 +84,7 @@ contract Review {
     lastMovieID++;
   }
 
-  function getMovie(uint index) public constant returns (bytes32, bytes32, bytes32, uint, uint) {
-    return (movies[index].title, movies[index].link, movies[index].image, movies[index].positiveVotes, movies[index].negativeVotes);
+  function getMovie(uint _id) public constant returns (bytes32, bytes32, bytes32, uint, uint) {
+    return (movies[_id].title, movies[_id].link, movies[_id].image, movies[_id].positiveVotes, movies[_id].negativeVotes);
   }
 }
